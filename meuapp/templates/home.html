@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Entrega-Pedro-Soprano</title>
+</head>
+
+<body>
+
+    {% if files %}
+    <h2>Total</h2>
+    <div>
+
+        <h2>R$ {{total}}</h2>
+    </div>
+
+    <table>
+        <tr>
+            <th>Nome da loja</th>
+            <th>Dono da loja</th>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>N° cartão</th>
+            <th>Tipo</th>
+            <th>CPF</th>
+            <th>Hora</th>
+        </tr>
+        {% for file in files %}
+        <tr>
+            <td>{{file.nome_loja}}</td>
+            <td>{{file.dono}}</td>
+            <td>{{file.data}}</td>
+            <td>{{file.valor}}</td>
+            <td>{{file.cartao}}</td>
+            <td>{{file.tipo}}</td>
+            <td>{{file.CPF}}</td>
+            <td>{{file.hora}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="{% url 'home:upload' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ message }}
+        <p>{{ form.non_field_errors }}</p>
+
+        <p>{{ form.documento.label_tag }}</p>
+
+        <p class="input">
+            {{ form.documento }}
+        </p>
+
+        <p><input type="submit" value="Upload" /></p>
+    </form>
+</body>
+
+</html>
