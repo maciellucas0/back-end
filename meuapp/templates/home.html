@@ -40,7 +40,7 @@
         {% endfor %}
     </table>
     {% endif %}
-    <form action="{% url 'home:upload' %}" method="post" enctype="multipart/form-data">
+    <form action="{% url :upload' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ message }}
         <p>{{ form.non_field_errors }}</p>
