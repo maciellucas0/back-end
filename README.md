@@ -6,16 +6,17 @@ Sua tarefa é criar uma interface web que aceite upload do arquivo CNAB, normali
 Instruções:
 
 Crie seu ambiente virtual:
-python -m venv venv
+-python -m venv venv
+
 Ative seu venv:
 # linux:
-source venv/bin/activate
+-source venv/bin/activate
 
 # windows:
 .\venv\Scripts\activate
-Atualize o pip
- pip install --upgrade pip
+
 Instale as dependências
-pip install -r requirements.txt
+-pip install -r requirements.txt
+
 Execute as migrações
-python manage.py migrate
+-python manage.py migrate
