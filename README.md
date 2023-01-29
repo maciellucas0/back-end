@@ -20,3 +20,6 @@ Instale as dependências
 
 Execute as migrações
 -python manage.py migrate
+
+Rode o servidor 
+-python manage.py runserver
